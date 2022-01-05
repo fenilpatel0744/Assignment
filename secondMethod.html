@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Method 2</title>
+    
+  </head>
+  <body>
+    <h1 style="margin-top: 20px; margin-bottom: 30px;">Assignment</h1>
+    <p id="data1"></p>
+    <p id="data2"></p>
+    <p id="data3"></p>
+    <script>
+    
+    fetch('https://run.mocky.io/v3/8260aa5d-8af8-4cff-999e-6e81b217f0ba').then((apidata)=>{
+    //console.log(apidata);
+    return apidata.json();
+    })
+    .then((data) => {
+    console.log(data);
+    const mydata = data.clients[0];
+    const mydata1 = data.clients[1];
+    const mydata2 = data.clients[2];
+    document.getElementById('data1').innerHTML = `The name is ${mydata.name} and Company is ${mydata.company}.`;
+    document.getElementById('data2').innerHTML = `The name is ${mydata1.name} annd Company is ${mydata1.company}.`;
+    document.getElementById('data3').innerHTML = `The name is ${mydata2.name} and Company is ${mydata2.company}.`;
+    
+    })
+    .catch((error)=>{
+    console.log(error)
+    });
+    
+    
+    </script>
+    
+  </body>
+</html>

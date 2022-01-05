@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Method 1</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link type="text/css" href="/assets/css/argon.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1 style="text-align: center; margin-top: 20px; margin-bottom: 30px;">Assignment</h1>
+		<table class="table align-items-center">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Company</th>
+			</tr>
+			<tbody id="myTable">
+			</tbody>
+		</table>
+		<script>
+			var array =
+		[
+		{
+		"name": "Nandha",
+		"id" : "1",
+		"company" : "BooksApp",
+		"orderId": "1",
+		"invoicepaid": "250",
+		"invoicePending": "280"
+		},
+		{
+		"name": "Ashley",
+		"id" : "2",
+		"company" : "NotarizedDocs",
+		"orderId": "13",
+		"invoicepaid": "150",
+		"invoicePending": "180"
+		},
+		{
+		"name": "Rajal",
+		"id" : "4",
+		"company" : "Conneqtly",
+		"orderId": "14",
+		"invoicepaid": "500",
+		"invoicePending": "580"
+		}
+		]
+			buildTable(array)
+			function buildTable(data){
+				var table = document.getElementById('myTable')
+				for (var i = 0; i < data.length; i++){
+					var row = `<tr>
+									<td>${data[i].id}</td>
+									<td>${data[i].name}</td>
+									<td>${data[i].company}</td>
+							</tr>`
+					table.innerHTML += row
+				}
+			}
+		</script>
+	</body>
+</html>
